@@ -6,7 +6,7 @@
 %define	pdir	Pod
 %define	pnam	Parser
 Summary:	Pod::Parser - base class for creating POD filters and translators
-#Summary(pl):	
+Summary(pl):	Pod::Parser - klasa bazowa do tworzenia klas filtruj±cych i t³umacz±cych POD
 Name:		perl-Pod-Parser
 Version:	1.28
 Release:	1
@@ -21,17 +21,24 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-B<Pod::Parser> is a base class for creating POD filters and translators.
+Pod::Parser is a base class for creating POD filters and translators.
 It handles most of the effort involved with parsing the POD sections
-from an input stream, leaving subclasses free to be concerned only with
-performing the actual translation of text.
+from an input stream, leaving subclasses free to be concerned only
+with performing the actual translation of text.
 
-B<Pod::Parser> parses PODs, and makes method calls to handle the various
-components of the POD. Subclasses of B<Pod::Parser> override these methods
-to translate the POD into whatever output format they desire.
+Pod::Parser parses PODs, and makes method calls to handle the various
+components of the POD. Subclasses of Pod::Parser override these
+methods to translate the POD into whatever output format they desire.
 
-# %description -l pl
-# TODO
+%description -l pl
+Pod::Parser to klasa bazowa do tworzenia klas filtruj±cych i
+t³umacz±cych POD. Obs³uguje wiêksz± czê¶æ zadañ zwi±zanych z analiz±
+sekcji POD ze strumienia wej¶ciowego, pozostawiaj±c podklasom jedynie
+przeprowadzanie samego t³umaczenia tekstu.
+
+Pod::Parser przetwarza pliki POD i wywo³uje metody obs³uguj±ce ró¿ne
+komponenty POD. Podklasy Pod::Parser przykrywaj± te metody w celu
+t³umaczenia POD na ¿±dany format wyj¶ciowy.
 
 %prep
 %setup -q -n %{pdir}%{pnam}-%{version}
