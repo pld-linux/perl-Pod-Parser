@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Pod
-%define	pnam	Parser
+%define		pdir	Pod
+%define		pnam	Parser
 Summary:	Pod::Parser - base class for creating POD filters and translators
 Summary(pl):	Pod::Parser - klasa bazowa do tworzenia klas filtruj±cych i t³umacz±cych POD
 Name:		perl-Pod-Parser
