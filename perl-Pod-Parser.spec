@@ -9,13 +9,13 @@ Summary:	Pod::Parser - base class for creating POD filters and translators
 Summary(pl):	Pod::Parser - klasa bazowa do tworzenia klas filtruj±cych i t³umacz±cych POD
 Name:		perl-Pod-Parser
 Version:	1.31
-Release:	2
+Release:	3
 # I'm not sure how to interpret the README...
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	9239f922617f805bc9da2f71d717061c
-Patch0:		perl-Pod-Parser-broken.patch
+Patch0:		%{name}-broken.patch
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
@@ -42,7 +42,7 @@ methods to translate the POD into whatever output format they desire.
   It's gone to meet it's Maker! THIS IS AN EX-PARROT!
     -- The Dead Parrot Sketch, Monty Python's Flying Circus
 
-Wykonaj s/parrot/pakiet/g, a poznasz status tej dystrybucji.
+Wykonaj s/parrot/pakiet/g, a poznasz status tego modu³u.
 
 Pod::Parser to klasa bazowa do tworzenia klas filtruj±cych i
 t³umacz±cych POD. Obs³uguje wiêksz± czê¶æ zadañ zwi±zanych z analiz±
@@ -69,6 +69,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# resolve conflict with perl-tools
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/pod2usage{,.cpan}
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/podchecker{,.cpan}
+%{__mv} $RPM_BUILD_ROOT%{_bindir}/podselect{,.cpan}
+%{__mv} $RPM_BUILD_ROOT%{_mandir}/man1/pod2usage{,.cpan}.1p
+%{__mv} $RPM_BUILD_ROOT%{_mandir}/man1/podchecker{,.cpan}.1p
+%{__mv} $RPM_BUILD_ROOT%{_mandir}/man1/podselect{,.cpan}.1p
 
 %clean
 rm -rf $RPM_BUILD_ROOT
