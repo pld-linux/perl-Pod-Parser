@@ -38,11 +38,11 @@ components of the POD. Subclasses of Pod::Parser override these
 methods to translate the POD into whatever output format they desire.
 
 %description -l pl
-  This parrot is dead. It has ceased to be.
-  It's gone to meet it's Maker! THIS IS AN EX-PARROT!
-    -- The Dead Parrot Sketch, Monty Python's Flying Circus
+  Ta papuga jest martwa. Przesta³a istnieæ.
+  Odesz³a na spotkanie ze swoim stwórc±! TO JEST EX-PAPUGA!
+    -- skecz "Martwa Papuga", Lataj±cy Cyrk Monty Pythona
 
-Wykonaj s/parrot/pakiet/g, a poznasz status tego modu³u.
+Wykonaj s/papuga/pakiet/g, a poznasz status tego modu³u.
 
 Pod::Parser to klasa bazowa do tworzenia klas filtruj±cych i
 t³umacz±cych POD. Obs³uguje wiêksz± czê¶æ zadañ zwi±zanych z analiz±
