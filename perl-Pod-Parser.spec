@@ -6,7 +6,7 @@
 %define		pdir	Pod
 %define		pnam	Parser
 Summary:	Pod::Parser - base class for creating POD filters and translators
-Summary(pl):	Pod::Parser - klasa bazowa do tworzenia klas filtruj±cych i t³umacz±cych POD
+Summary(pl.UTF-8):   Pod::Parser - klasa bazowa do tworzenia klas filtrujÄ…cych i tÅ‚umaczÄ…cych POD
 Name:		perl-Pod-Parser
 Version:	1.34
 Release:	1
@@ -37,21 +37,21 @@ Pod::Parser parses PODs, and makes method calls to handle the various
 components of the POD. Subclasses of Pod::Parser override these
 methods to translate the POD into whatever output format they desire.
 
-%description -l pl
-  Ta papuga jest martwa. Przesta³a istnieæ.
-  Odesz³a na spotkanie ze swoim stwórc±! TO JEST EX-PAPUGA!
-    -- skecz "Martwa Papuga", Lataj±cy Cyrk Monty Pythona
+%description -l pl.UTF-8
+  Ta papuga jest martwa. PrzestaÅ‚a istnieÄ‡.
+  OdeszÅ‚a na spotkanie ze swoim stwÃ³rcÄ…! TO JEST EX-PAPUGA!
+    -- skecz "Martwa Papuga", LatajÄ…cy Cyrk Monty Pythona
 
-Wykonaj s/papuga/pakiet/g, a poznasz status tego modu³u.
+Wykonaj s/papuga/pakiet/g, a poznasz status tego moduÅ‚u.
 
-Pod::Parser to klasa bazowa do tworzenia klas filtruj±cych i
-t³umacz±cych POD. Obs³uguje wiêksz± czê¶æ zadañ zwi±zanych z analiz±
-sekcji POD ze strumienia wej¶ciowego, pozostawiaj±c podklasom jedynie
-przeprowadzanie samego t³umaczenia tekstu.
+Pod::Parser to klasa bazowa do tworzenia klas filtrujÄ…cych i
+tÅ‚umaczÄ…cych POD. ObsÅ‚uguje wiÄ™kszÄ… czÄ™Å›Ä‡ zadaÅ„ zwiÄ…zanych z analizÄ…
+sekcji POD ze strumienia wejÅ›ciowego, pozostawiajÄ…c podklasom jedynie
+przeprowadzanie samego tÅ‚umaczenia tekstu.
 
-Pod::Parser przetwarza pliki POD i wywo³uje metody obs³uguj±ce ró¿ne
-komponenty POD. Podklasy Pod::Parser przykrywaj± te metody w celu
-t³umaczenia POD na ¿±dany format wyj¶ciowy.
+Pod::Parser przetwarza pliki POD i wywoÅ‚uje metody obsÅ‚ugujÄ…ce rÃ³Å¼ne
+komponenty POD. Podklasy Pod::Parser przykrywajÄ… te metody w celu
+tÅ‚umaczenia POD na Å¼Ä…dany format wyjÅ›ciowy.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
