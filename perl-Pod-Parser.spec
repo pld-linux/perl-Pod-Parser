@@ -15,7 +15,6 @@ License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	a64632f0b782bea8c0055e34c19d49dc
-#Patch0:		%{name}-broken.patch
 URL:		http://search.cpan.org/dist/Pod-Parser/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -56,7 +55,6 @@ tłumaczenia POD na żądany format wyjściowy.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
-#%patch0 -p1 -b .orig
 
 %build
 %{__perl} Makefile.PL \
