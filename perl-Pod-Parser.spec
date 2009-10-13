@@ -10,6 +10,7 @@ Summary(pl.UTF-8):	Pod::Parser - klasa bazowa do tworzenia klas filtrujących i 
 Name:		perl-Pod-Parser
 Version:	1.38
 Release:	1
+Epoch:		1
 # I'm not sure how to interpret the README...
 License:	Artistic
 Group:		Development/Languages/Perl
