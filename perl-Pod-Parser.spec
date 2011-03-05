@@ -17,8 +17,12 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b23b9997bb460f8e9fa0c6cec722be11
 URL:		http://search.cpan.org/dist/Pod-Parser/
+BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+%if %{with tests}
+BuildRequires:	perl-Test-Simple >= 0.60
+%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -84,6 +88,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README TODO
+%attr(755,root,root) %{_bindir}/pod2usage.cpan
+%attr(755,root,root) %{_bindir}/podchecker.cpan
+%attr(755,root,root) %{_bindir}/podselect.cpan
 %{perl_vendorlib}/Pod/*.pm
-%{_mandir}/man?/*
-%{_bindir}/*
+%{_mandir}/man1/pod2usage.cpan.1p*
+%{_mandir}/man1/podchecker.cpan.1p*
+%{_mandir}/man1/podselect.cpan.1p*
+%{_mandir}/man3/Pod::*.3pm*
