@@ -8,14 +8,14 @@
 Summary:	Pod::Parser - base class for creating POD filters and translators
 Summary(pl.UTF-8):	Pod::Parser - klasa bazowa do tworzenia klas filtrujących i tłumaczących POD
 Name:		perl-Pod-Parser
-Version:	1.38
-Release:	2
+Version:	1.61
+Release:	1
 Epoch:		1
 # I'm not sure how to interpret the README...
 License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b23b9997bb460f8e9fa0c6cec722be11
+# Source0-md5:	77e912caf2a1c5b29d577dff80390ce8
 URL:		http://search.cpan.org/dist/Pod-Parser/
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -75,11 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # resolve conflict with perl-tools
-%{__mv} $RPM_BUILD_ROOT%{_bindir}/pod2usage{,.cpan}
-%{__mv} $RPM_BUILD_ROOT%{_bindir}/podchecker{,.cpan}
 %{__mv} $RPM_BUILD_ROOT%{_bindir}/podselect{,.cpan}
-%{__mv} $RPM_BUILD_ROOT%{_mandir}/man1/pod2usage{,.cpan}.1p
-%{__mv} $RPM_BUILD_ROOT%{_mandir}/man1/podchecker{,.cpan}.1p
 %{__mv} $RPM_BUILD_ROOT%{_mandir}/man1/podselect{,.cpan}.1p
 
 %clean
@@ -88,11 +84,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README TODO
-%attr(755,root,root) %{_bindir}/pod2usage.cpan
-%attr(755,root,root) %{_bindir}/podchecker.cpan
 %attr(755,root,root) %{_bindir}/podselect.cpan
-%{perl_vendorlib}/Pod/*.pm
-%{_mandir}/man1/pod2usage.cpan.1p*
-%{_mandir}/man1/podchecker.cpan.1p*
+%{perl_vendorlib}/Pod/Find.pm
+%{perl_vendorlib}/Pod/InputObjects.pm
+%{perl_vendorlib}/Pod/ParseUtils.pm
+%{perl_vendorlib}/Pod/Parser.pm
+%{perl_vendorlib}/Pod/PlainText.pm
+%{perl_vendorlib}/Pod/Select.pm
 %{_mandir}/man1/podselect.cpan.1p*
-%{_mandir}/man3/Pod::*.3pm*
+%{_mandir}/man3/Pod::Find.3pm*
+%{_mandir}/man3/Pod::InputObjects.3pm*
+%{_mandir}/man3/Pod::ParseUtils.3pm*
+%{_mandir}/man3/Pod::Parser.3pm*
+%{_mandir}/man3/Pod::PlainText.3pm*
+%{_mandir}/man3/Pod::Select.3pm*
