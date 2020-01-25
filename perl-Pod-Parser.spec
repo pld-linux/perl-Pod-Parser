@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Pod
 %define		pnam	Parser
 Summary:	Pod::Parser - base class for creating POD filters and translators
