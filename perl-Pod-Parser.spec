@@ -7,6 +7,7 @@
 Summary:	Pod::Parser - base class for creating POD filters and translators
 Summary(pl.UTF-8):	Pod::Parser - klasa bazowa do tworzenia klas filtrujących i tłumaczących POD
 Name:		perl-Pod-Parser
+# perl-modules 5.30 provides 1.63
 Version:	1.61
 Release:	1
 Epoch:		1
@@ -15,10 +16,11 @@ License:	Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	77e912caf2a1c5b29d577dff80390ce8
-URL:		http://search.cpan.org/dist/Pod-Parser/
+URL:		https://metacpan.org/release/Pod-Parser
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-Test-Simple >= 0.60
 %endif
