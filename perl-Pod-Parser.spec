@@ -8,7 +8,7 @@ Summary:	Pod::Parser - base class for creating POD filters and translators
 Summary(pl.UTF-8):	Pod::Parser - klasa bazowa do tworzenia klas filtrujących i tłumaczących POD
 Name:		perl-Pod-Parser
 Version:	1.63
-Release:	1
+Release:	2
 Epoch:		1
 # I'm not sure how to interpret the README...
 License:	Artistic
@@ -23,6 +23,8 @@ BuildRequires:	rpmbuild(macros) >= 1.745
 %if %{with tests}
 BuildRequires:	perl-Test-Simple >= 0.60
 %endif
+# podselect used to be bundled in perl-tools-pod
+Conflicts:	perl-tools-pod < 1:5.32
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -74,24 +76,20 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-# resolve conflict with perl-tools
-%{__mv} $RPM_BUILD_ROOT%{_bindir}/podselect{,.cpan}
-%{__mv} $RPM_BUILD_ROOT%{_mandir}/man1/podselect{,.cpan}.1p
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc CHANGES README TODO
-%attr(755,root,root) %{_bindir}/podselect.cpan
+%attr(755,root,root) %{_bindir}/podselect
 %{perl_vendorlib}/Pod/Find.pm
 %{perl_vendorlib}/Pod/InputObjects.pm
 %{perl_vendorlib}/Pod/ParseUtils.pm
 %{perl_vendorlib}/Pod/Parser.pm
 %{perl_vendorlib}/Pod/PlainText.pm
 %{perl_vendorlib}/Pod/Select.pm
-%{_mandir}/man1/podselect.cpan.1p*
+%{_mandir}/man1/podselect.1p*
 %{_mandir}/man3/Pod::Find.3pm*
 %{_mandir}/man3/Pod::InputObjects.3pm*
 %{_mandir}/man3/Pod::ParseUtils.3pm*
