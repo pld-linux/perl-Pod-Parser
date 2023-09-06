@@ -1,21 +1,21 @@
 #
 # Conditional build:
-%bcond_without	tests	# do not perform "make test"
+%bcond_without	tests	# unit tests
 #
 %define		pdir	Pod
 %define		pnam	Parser
 Summary:	Pod::Parser - base class for creating POD filters and translators
 Summary(pl.UTF-8):	Pod::Parser - klasa bazowa do tworzenia klas filtrujących i tłumaczących POD
 Name:		perl-Pod-Parser
-Version:	1.63
-Release:	2
+Version:	1.66
+Release:	1
 Epoch:		1
 # I'm not sure how to interpret the README...
 License:	Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	d8e0d60e03d77442d354fd567e469ae4
-URL:		https://metacpan.org/release/Pod-Parser
+Source0:	https://www.cpan.org/modules/by-module/Pod/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	c1d20031bc2b75ea0fe7bf6d313b1d30
+URL:		https://metacpan.org/dist/Pod-Parser
 BuildRequires:	perl(File::Spec) >= 0.82
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
